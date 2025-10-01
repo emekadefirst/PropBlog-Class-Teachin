@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- Container -->
+<div class="max-w-3xl mx-auto p-6 bg-white shadow-md rounded-lg mt-8">
+    <!-- Title -->
+    <h1 class="text-3xl font-bold mb-2">{{ blog.title }}</h1>
+
+    <!-- Author + Date -->
+    <div class="flex items-center text-sm text-gray-500 mb-6">
+        <img src="https://i.pravatar.cc/40" class="w-8 h-8 rounded-full mr-3" alt="Author">
+        <p>{{ blog.created_at }}</p>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="prose max-w-none">
+        <img src="{{ blog.image.url }}" alt="Coding Example" class="rounded-lg my-6 shadow-md">
+        <p>
+            {{ blog.content }}
+        </p>
+    </div>
+
+    <!-- Back Button -->
+    <div class="mt-8">
+        <a href="index.html" class="px-4 py-2 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700">
+            ← Back to Blogs
+        </a>
+    </div>
+
+</div>
+
+{% endblock %}
